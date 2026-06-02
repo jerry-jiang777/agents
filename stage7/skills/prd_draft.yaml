@@ -1,0 +1,50 @@
+name: prd_draft
+version: 1.0.0
+description: >
+  用于根据用户给定的功能想法、业务背景或问题描述，生成 PRD 草稿。
+  适用于产品需求文档、功能设计草案、验收标准整理。
+triggers:
+  - 写 PRD
+  - 写产品需求文档
+  - 设计一个功能
+  - 整理需求草稿
+  - 输出验收标准
+inputs:
+  - feature_name: 功能名称
+  - background: 背景
+  - target_users: 目标用户
+  - user_problem: 用户问题
+  - business_goal: 业务目标
+  - constraints: 约束条件
+steps:
+  - 提取或追问功能名称、目标用户、用户问题。
+  - 明确业务目标和成功指标。
+  - 拆解用户故事。
+  - 定义功能范围和非目标。
+  - 描述核心流程和异常流程。
+  - 编写验收标准。
+  - 列出风险和待确认问题。
+  - 如需保存，调用 write_note。
+tools:
+  - read_file
+  - search_docs
+  - write_note
+outputs:
+  - 背景
+  - 目标
+  - 目标用户
+  - 用户故事
+  - 功能范围
+  - 非目标
+  - 流程说明
+  - 验收标准
+  - 风险
+  - 待确认问题
+constraints:
+  - 输入不足时先列出待确认问题。
+  - 不要假设业务数据。
+  - 不要把猜测写成事实。
+  - 输出应是草稿，不是最终定稿。
+examples:
+  - user: 帮我写一个学习计划管理功能的 PRD 草稿
+    expected_skill: prd_draft

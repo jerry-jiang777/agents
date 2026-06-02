@@ -1,0 +1,43 @@
+name: competitor_analysis
+version: 1.0.0
+description: >
+  用于基于用户提供资料或本地知识库进行竞品分析。
+  适用于产品功能对比、定价对比、目标用户分析和机会点总结。
+  当前版本不包含互联网搜索能力。
+triggers:
+  - 竞品分析
+  - 对比几个产品
+  - 分析竞争对手
+  - 寻找产品机会点
+inputs:
+  - product_name: 被分析产品
+  - competitors: 竞品列表
+  - analysis_dimensions: 分析维度
+  - source_materials: 用户提供或本地资料
+steps:
+  - 检查是否有 product_name 和 competitors。
+  - 如果缺少关键信息，先追问用户。
+  - 收集本地资料或读取用户指定文件。
+  - 提取功能、定价、目标用户、差异化。
+  - 形成对比表。
+  - 总结机会点、风险和不确定信息。
+tools:
+  - search_docs
+  - read_file
+  - list_files
+  - write_note
+outputs:
+  - 分析范围
+  - 竞品对比表
+  - 主要差异
+  - 机会点
+  - 风险和不确定信息
+  - 来源说明
+constraints:
+  - 不得编造未提供资料。
+  - 不确定信息必须标注。
+  - 当前版本不能声称已搜索互联网。
+  - 如果资料不足，应先追问或说明限制。
+examples:
+  - user: 帮我对比 Notion 和 Obsidian 的学习笔记能力
+    expected_skill: competitor_analysis

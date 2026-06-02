@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+*.jsonl
+
+# Stage 3 long memory
+stage3/memories.db
+
+# Stage 4 RAG indexes
+stage4/indexes/
+
+# Stage 5 tool logs
+stage5/tool_logs.jsonl
+
+# Stage 6 agent logs/runs
+stage6/agent_logs.jsonl
+stage6/runs/
+
+# Stage 7 skill logs/runs
+stage7/skill_logs.jsonl
+stage7/runs/
+
+# OS/editor
+.DS_Store
+.vscode/

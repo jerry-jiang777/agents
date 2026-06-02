@@ -1,0 +1,42 @@
+name: learning_note
+version: 1.0.0
+description: >
+  用于将学习材料、项目阶段内容或对话内容整理成结构化学习笔记。
+  适用于总结知识点、复习提纲、阶段复盘、练习题生成等任务。
+triggers:
+  - 整理学习笔记
+  - 总结学习阶段
+  - 生成复习提纲
+  - 提炼知识点
+  - 输出练习题
+inputs:
+  - topic: 学习主题
+  - source_path: 可选，指定文件或目录
+  - save_note: 是否保存笔记
+steps:
+  - 确认学习主题和材料来源。
+  - 如果提供 source_path，读取或检索相关资料。
+  - 提取核心概念、关键流程、易错点。
+  - 用“概念-解释-示例-练习”的结构组织内容。
+  - 生成复盘问题。
+  - 如果用户要求保存，调用 write_note。
+tools:
+  - search_docs
+  - read_file
+  - list_files
+  - write_note
+outputs:
+  - 学习主题
+  - 核心概念
+  - 关键流程
+  - 易错点
+  - 示例
+  - 练习题
+  - 复盘问题
+constraints:
+  - 不要编造资料中没有的信息。
+  - 如果资料不足，要明确说明限制。
+  - 写入笔记前必须用户确认。
+examples:
+  - user: 帮我整理第 6 阶段 Agent 的学习笔记
+    expected_skill: learning_note
